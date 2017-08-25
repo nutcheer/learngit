@@ -1,0 +1,25 @@
+git config --global user.name "nutcheer"
+git config --global user.email "a9501421@gmail.com
+git init
+git add <file>
+git commit -m "message"
+git status
+git diff
+git reset --hard commit_id	//回到id版本
+git log				//查看提交历史，回过去
+git reflog			//查看命令历史，回未来
+git checkout --<file> 		//丢弃工作区的修改
+git reset HEAD <file>		//HEAD为最新版本，撤销暂存区修改并使其回到工作区，如需继续删除需执行上部
+git rm <file>			//删除后只能恢复到最近一次修改的版本
+ssh-keygen -t rsa -C "a9501421@gmail.com"	//创建SSH Key
+// 在Github的Account settings的SSH keys中添加~/.ssh目录下id_rsa.pub文件的内容
+git remote add origin git@github.com:nutcheer/learngit.git
+git push -u origin master	//第一次推送加-u参数进行关联
+git clone git@github.com:nutcheer/learngit.git	//克隆远程库
+git branch			//查看分支
+git branch <name>		//创建分支
+git checkout <name>		//切换分支
+git checkout -b <name>		//创建并切换分支
+git merge <name>		//合并某分支到当前分支
+git branch -d <name>		//删除分支
+

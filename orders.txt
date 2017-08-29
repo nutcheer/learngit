@@ -1,7 +1,7 @@
 git config --global user.name "nutcheer"
 git config --global user.email "a9501421@gmail.com
 git init
-git add <file>
+git add <file>			//-f 强制添加，忽略忽略
 git commit -m "message"
 git status
 git diff
@@ -20,6 +20,26 @@ git branch			//查看分支
 git branch <name>		//创建分支
 git checkout <name>		//切换分支
 git checkout -b <name>		//创建并切换分支
-git merge <name>		//合并某分支到当前分支
+git merge <name>		//合并某分支到当前分支,fast forward模式
 git branch -d <name>		//删除分支
+git log --graph			//查看分支合并图
+git merge --no-ff -m "message" <name>		//普通模式合并某分支到当前分支
+git stash			//临时储存工作现场
+git stash pop			//返回工作现场并删除临时储存
+git stash list			//工作现场详情
+git stash apply stash@{0}	//恢复到指定的工作现场，不删除临时储存
+git stash drop			//删除临时储存
+git remote -v			//查看远程仓库(-v详细信息）
+git tag				//查看标签(后加参数表示创建标签)
+// 给过去版本打标签 用git log --pretty=oneline --abbrev-commit找到id
+// 然后git tag <tagname> <id>
+git show <tagname>		//查看该版本说明文字
+git tag -a <tagname> -m "message"		//可以指定标签信息
+git tag -s <tagname> -m "message"		//可以用PGP签名
+git tag -d <tagname>		//删除标签
+git push origin <tagname>	//推送标签到远程
+git push origin --tags		//一次性推送全部标签到远程
+git push origin :refs/tags/<tagname>		//删除远程标签
+git check-ignore -v <file>	//检查规则
+// .gitignore 文件为忽略的规则
 
